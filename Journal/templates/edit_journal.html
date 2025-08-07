@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My Journal - Edit Entry</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+
+            form {
+                background-color: #fff;
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                font-weight: bold;
+                display: block;
+                margin-bottom: 8px;
+                color: #444;
+            }
+
+            input[type="text"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            input[type="submit"] {
+                background-color: #4caf50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+
+    <form action="{% url 'journal_edit' journal.id %}" method="POST">
+        {% csrf_token %}
+
+        <label for="date">Date:</label>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            value="{{ journal.date|date:'Y-m-d' }}"
+        />
+
+        <label for="heading">Heading:</label>
+        <input
+            type="text"
+            id="heading"
+            name="heading"
+            value="{{ journal.heading }}"
+        />
+
+        <label for="entry">Entry:</label>
+        <textarea id="entry" name="entry">{{ journal.entry }}</textarea>
+
+        <input type="submit" value="Save Changes" />
+    </form>
+</html>

@@ -1,0 +1,11 @@
+# Ignore secrets or credentials
+secrets.json
+
+*/migrations/
+
+# Virtual environments
+venv/
+.venv/
+
+# database
+db.sqlite3

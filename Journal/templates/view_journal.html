@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My Journal -{{journal.id}}</title>
+        <style>
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f4f6f8;
+                padding: 50px;
+                color: #2c3e50;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                max-width: 800px;
+                margin: auto;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 28px;
+                color: #34495e;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.6;
+                color: #2c3e50; /* Added color consistency */
+            }
+
+            a {
+                text-decoration: none;
+                color: #007bff; /* Added color consistency */
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            button {
+                background-color: #007bff;
+                border: none;
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 6px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                display: inline-block; /* Added for consistent button display */
+                text-align: center; /* Added for consistent button text alignment */
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            .delete-button {
+                background-color: #dc3545;
+            }
+
+            .delete-button:hover {
+                background-color: #b52a37;
+            }
+
+            .home-link {
+                display: block;
+                text-align: center;
+                margin-top: 10px; /* Reduced margin for better spacing */
+                font-size: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>{{ journal.heading }} - {{ journal.date }}</h1>
+            <p>{{ journal.entry }}</p>
+
+            <a class="home-link" href="{% url 'index' %}"
+                >Click here to go to Home Page</a
+            >
+
+            <a class="home-link" href="{% url 'journal_edit' journal.id %}"
+                >Edit Journal</a
+            >
+            <form action="{% url 'journal_delete' journal.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="delete-button">
+                    Delete Journal
+                </button>
+            </form>
+        </div>
+    </body>
+</html>
