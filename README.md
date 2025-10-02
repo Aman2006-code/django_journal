@@ -2,7 +2,7 @@
 
 This is the **Django version** of my earlier Flask-based Journal App. It was an experiment to get familiar with Django and explore how powerful and developer-friendly it is.
 
-> 💡 I’m just loving the features of Django — not gonna lie!
+> 💡 I’m just loving the features of Django — not gonna lie!!
 
 ---
 
@@ -11,7 +11,7 @@ This is the **Django version** of my earlier Flask-based Journal App. It was an 
 ### 📦 Prerequisites
 
 - Python 3.x
-- Django 
+- Django
 
 ### 🔧 Setup
 
