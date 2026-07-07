@@ -1,19 +1,19 @@
-# 📝 Django Journal App
+# Django Journal App
 
 This is the **Django version** of my earlier Flask-based Journal App. It was an experiment to get familiar with Django and explore how powerful and developer-friendly it is.
 
-> 💡 I’m just loving the features of Django — not gonna lie!!
+> I’m just loving the features of Django — not gonna lie!!
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 📦 Prerequisites
+### Prerequisites
 
 - Python 3.x
 - Django
 
-### 🔧 Setup
+### Setup
 
 ```bash
 # Clone the repo
